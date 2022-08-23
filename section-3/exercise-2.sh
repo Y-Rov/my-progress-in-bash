@@ -14,3 +14,4 @@ for DIRECTORY in ${DIRECTORIES}
 do
   file_count $DIRECTORY
 done
+exit 0

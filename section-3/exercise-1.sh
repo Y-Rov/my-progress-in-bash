@@ -7,3 +7,4 @@ function file_count() {
   echo "In current directory: ${FILE_COUNT} file(s)"
 }
 file_count
+exit 0
