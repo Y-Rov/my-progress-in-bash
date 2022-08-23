@@ -9,7 +9,7 @@ FILE_PATH=$1
 
 if [ -f "$FILE_PATH" ]
 then
-	echo "This is a regular file."
+  echo "This is a regular file."
 elif [ -d "$FILE_PATH" ]
 then
   echo "This is a directory."

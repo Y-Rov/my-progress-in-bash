@@ -2,14 +2,16 @@
 
 # This script checks if the file "/etc/shadow" exists and if it is editable.
 
-if [ -e /etc/shadow ]
-then
-	echo "Shadow passwords are enabled."
+FILE_PATH="/etc/shadow"
 
-	if [ -w /etc/shadow ]
-	then
-		echo "You have permissions to edit /etc/shadow."
-	else
-		echo "You do NOT have permissions to edit /etc/shadow."
-	fi
+if [ -e "${FILE_PATH}" ]
+then
+  echo "Shadow passwords are enabled."
+
+  if [ -w "${FILE_PATH}" ]
+  then
+    echo "You have permissions to edit ${FILE_PATH}."
+  else
+  echo "You do NOT have permissions to edit ${FILE_PATH}."
+  fi
 fi
