@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# This script is a modified version of the previous one (exercise-7.sh).
+# It accepts an unlimited number of files and directories as arguments. 
+# In for loop it reports if it is a regular file, a directory, or other type of file.
+# It also performs an ls command against the file or directory with the long listing option. 
+
 FILE_PATHES=$@
 
 for FILE_PATH in $FILE_PATHES
