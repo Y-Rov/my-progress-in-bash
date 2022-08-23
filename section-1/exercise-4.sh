@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# This script checks if the file "/etc/shadow" exists and if it is editable.
+
 if [ -e /etc/shadow ]
 then
 	echo "Shadow passwords are enabled."
