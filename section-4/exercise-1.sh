@@ -14,3 +14,4 @@ function rename_images() {
 }
 
 rename_images
+exit 0

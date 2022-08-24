@@ -28,3 +28,4 @@ function rename_files() {
 read -p "Please enter a file extension: " EXTENSION
 read -p "Please enter a file prefix: " PREFIX
 rename_files $EXTENSION $PREFIX
+exit 0
