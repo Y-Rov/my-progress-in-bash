@@ -1,0 +1,16 @@
+#!/bin/bash
+
+PARAMETER=$1
+case "$PARAMETER" in
+  start)
+    /tmp/sleepwalkingserver &
+    ;;
+  stop)
+    kill $(cat /tmp/sleepwalkingserver.pid)
+    ;;
+  *)
+    echo "Usage sleepwalking start|stop"
+    exit 1
+    ;;
+esac
+exit 0
