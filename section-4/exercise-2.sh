@@ -11,21 +11,19 @@ function rename_files() {
   shopt -s nullglob # enable nullglob
   local FILE_EXTENSION=$1
   local FILE_PREFIX=$2
+  if [ -z "${FILE_PREFIX}" ]
+    then
+      FILE_PREFIX=$(date +%F)
+  fi
   for FILE in *."${FILE_EXTENSION}"
   do
-    if [ -n "${FILE_PREFIX}" ]
-    then
-      echo "Renaming ${FILE} to ${FILE_PREFIX}-${FILE}"
-      mv $FILE "${FILE_PREFIX}-${FILE}"
-    else
-      echo "Renaming ${FILE} to $(date "+%Y%m%d")${FILE}"
-      mv $FILE $(date "+%Y%m%d")${FILE}
-    fi
+    echo "Renaming ${FILE} to ${FILE_PREFIX}-${FILE}"
+    mv $FILE "${FILE_PREFIX}-${FILE}"
   done
   shopt -u nullglob # disable nullglob
 }
 
 read -p "Please enter a file extension: " EXTENSION
-read -p "Please enter a file prefix: " PREFIX
+read -p "Please enter a file prefix: (Press ENTER for $(date +%F)) " PREFIX
 rename_files $EXTENSION $PREFIX
 exit 0

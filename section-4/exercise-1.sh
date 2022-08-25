@@ -7,8 +7,8 @@ function rename_images() {
   shopt -s nullglob # enable nullglob
   for IMAGE in *.jpg
   do
-    echo "Renaming ${IMAGE} to $(date "+%Y%m%d")${IMAGE}"
-    mv $IMAGE $(date "+%Y%m%d")${IMAGE}
+    echo "Renaming ${IMAGE} to $(date "+%F")-${IMAGE}"
+    mv $IMAGE $(date "+%F")-${IMAGE}
   done
   shopt -u nullglob # disable nullglob
 }
