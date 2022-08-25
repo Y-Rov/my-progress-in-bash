@@ -7,3 +7,4 @@
 RANDOM_NUM=$RANDOM
 echo $RANDOM_NUM
 logger -p user.info $RANDOM_NUM
+exit 0
